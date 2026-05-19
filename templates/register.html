@@ -1,0 +1,250 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+	<title>Crystalline Attachment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/ionicons.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.css">
+    <link rel="stylesheet" href="../static/css/owl.theme.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+<script language="javascript">
+function validate()
+{
+	if(document.form1.name.value=="")
+	{
+	alert("Enter the Name");
+	document.form1.name.focus();
+	return false;
+	}
+	if(document.form1.mobile.value=="")
+	{
+	alert("Enter the Mobile Number");
+	document.form1.mobile.focus();
+	return false;
+	}
+	if(isNaN(document.form1.mobile.value))
+	{
+	alert("Invaalid Mobile Number!");
+	document.form1.mobile.select();
+	return false;
+	}
+	if(document.form1.mobile.value.length!=10)
+	{
+	alert("Mobile Number must be 10 digits");
+	document.form1.mobile.select();
+	return false;
+	}
+	
+	if(document.form1.pass.value=="")
+	{
+	alert("Enter the Password");
+	document.form1.pass.focus();
+	return false;
+	}
+	
+	if(document.form1.cpass.value=="")
+	{
+	alert("Enter the Confirm Password");
+	document.form1.cpass.focus();
+	return false;
+	}
+	
+	if(document.form1.pass.value!=document.form1.cpass.value)
+	{
+	alert("Password does not match!");
+	document.form1.cpass.select();
+	return false;
+	}
+	
+	
+return true;
+}
+</script>
+  </head>
+  <body>
+    <header id="home" class="gradient-violat">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="logo-wraper logo-white">
+                <img src="../static/images/Logo.png" alt="">Crystalline Attachment
+              </span></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav  navbar-right">
+              <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="/login_user">User</a></li>
+              <li><a href="/login">Admin</a></li>
+             
+              <li><a href="/register" class="btn btn-orange border-none btn-rounded-corner btn-navbar">Register<!--<span class="icon-on-button"><i class="ion-ios-cloud-download-outline"></i></span>--></a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+          <hr class="navbar-divider">
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+	 <section id="introduction" class="gradient-violat padding-top-90 home-slider">
+      <p>&nbsp;</p>
+    </section>
+   
+    <section id="services" class="padding-top-90">
+      <div class="container">
+	  <form name="form1" method="post">
+	   {% if msg=="success" %}
+	   <span style="color:#009900">Registered Success</span>
+					 <script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/login_user';
+}, 2000);
+</script>
+
+					 {% endif %}
+			{% if msg=="fail" %}
+			<span style="color:#FF0000">User Already Exist!</span>
+			{% endif %}
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-responsive sm-display-none" src="../static/images/hand_phone.png" alt="">
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading-wraper text-center margin-bottom-80">
+                  <h4>User Registration</h4>
+                  <hr class="heading-devider gradient-orange">
+                </div>
+              </div>
+            </div>
+			<div class="row">
+              <div class="col-md-6">
+                <h5 class="service-title">Name</h5>
+                <p class="services-content margin-bottom-25"><input type="text" name="name" class="form-control" required></p>
+              </div>
+              
+            </div>
+			<div class="row">
+              <div class="col-md-6">
+                <h5 class="service-title">Mobile No.</h5>
+                <p class="services-content margin-bottom-25"><input type="text" name="mobile" maxlength="10" class="form-control" required></p>
+              </div>
+              
+            </div>
+			
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="service-title">Username</h5>
+                <p class="services-content margin-bottom-25"><input type="text" name="uname" class="form-control" required></p>
+              </div>
+              
+            </div>
+			<div class="row">
+              <div class="col-md-6">
+                <h5 class="service-title">Password</h5>
+                <p class="services-content margin-bottom-25"><input type="password" name="pass" class="form-control" required></p>
+              </div>
+              
+            </div>
+			<div class="row">
+              <div class="col-md-6">
+                <h5 class="service-title">Confirm Password</h5>
+                <p class="services-content margin-bottom-25"><input type="password" name="cpass" class="form-control" required></p>
+              </div>
+              
+            </div>
+			<div class="row">
+              <div class="col-md-6">
+                
+                <p class="services-content margin-bottom-25"><button type="submit" name="btn" class="btn btn-orange border-none btn-rounded-corner" onClick="return validate()">Register</button></p>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+		</form>
+      </div>
+    </section>
+    <section id="cta" class="gradient-violat cta padding-top-bottom-90">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h3 class="cta-heading text-white">Crystalline Attachment</h3>
+            <p class="text-white">A Hybrid System Using RoBERTa and Static Image Rendering for Malicious Email Attachments</p>
+            <div class="cta-btn-group">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+   
+   
+    <footer class="padding-top-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="footer-left-content">
+              <div class="logo-colored">
+                <img src="../static/images/Logo_color.png" alt="">Crystalline Attachment
+              </div>
+              <div class="content">
+                <p class="margin-bottom-30 margin-top-30">Advanced spam filters can help detect and block malicious email files before they reach your primary inbox.</p>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              
+              <div class="col-md-3 col-sm-6">
+                <div class="footer-list-wiget">
+                  <h4>Links</h4>
+                  <div class="list-group">
+                    <a href="/" class="list-group-item">Home</a>
+                    <a href="/login_user" class="list-group-item">User</a>
+                    <a href="/login" class="list-group-item">Admin</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <hr class="footer-divider">
+          <div class="copyright-cta">
+            <p class="text-uppercase"><a href="https://themewagon.com/"><span class="span text-violat "></span></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-end-line"></div>
+    </footer>
+    <div id="scroll-top-div" class="scroll-top-div">
+      <div class="scroll-top-icon-container">
+        <i class="ion-ios-arrow-thin-up"></i>
+      </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

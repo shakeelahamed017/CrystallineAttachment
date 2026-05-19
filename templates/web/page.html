@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Crystalline Attachment</title>
+ <link rel="icon" type="image/png" sizes="16x16" href="../../static/web/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="../../static/web/css/style.css" rel="stylesheet">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+								<div class="row" style="background-color:#FFFFFF">
+                    <div class="col-lg-12">
+                      
+								
+		
+						
+		
+		{% for rs in data %}
+		<table class="table">		
+		<tr style="background-color:#996699; color:#FFFFFF">
+			<td align="left">{{rs[1]}} - {{rs[2]}}</td>
+		</tr>
+		<tr>
+			<td>Blocked File: {{rs[8]}}</td>
+		</tr>				
+		<tr>
+			<td align="right">{{rs[3]}}</td>
+		</tr>
+		
+		</table>
+		<br>
+		{% endfor %}
+						
+					
+					
+                                           
+                    </div>
+                </div>			
+
+
+
+<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/page';
+}, 8000);
+</script>
+
+	
+	  <script src="../../static/web/plugins/common/common.min.js"></script>
+    <script src="../../static/web/js/custom.min.js"></script>
+    <script src="../../static/web/js/settings.js"></script>
+    <script src="../../static/web/js/gleek.js"></script>
+    <script src="../../static/web/js/styleSwitcher.js"></script>
+
+    <script src="../../static/web/plugins/validation/jquery.validate.min.js"></script>
+    <script src="../../static/web/plugins/validation/jquery.validate-init.js"></script>				
+</body>
+</html>
